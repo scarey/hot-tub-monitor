@@ -61,7 +61,7 @@ class DisplayHandler:
             if self.oled:
                 self.oled.fill(0)
                 if not self.command:
-                    if self.is_display_on() and self.data.get('air_temp', None):
+                    if self.is_display_on() and self.data and self.data.get('air_temp', None):
                         rows = [
                             f'Air temp: {round(self.data["air_temp"], 1)}{self.temp_unit}',
                             f'pH:       {round(self.data["ph"], 1)}',
